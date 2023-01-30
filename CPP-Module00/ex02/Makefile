@@ -2,7 +2,7 @@ NAME 			=
 
 SRC				= 
 
-OBJ 			= ${SRC:.c=.o}
+OBJ 			= ${SRC:.cpp=.o}
 			
 CC 				= c++
 
@@ -14,7 +14,7 @@ GREEN			:= "\033[0;32m"
 CYAN			:= "\033[0;36m"
 RESET			:= "\033[0m"
 
-%.o:			%.c
+%.o:			%.cpp
 				@${CC} ${CFLAGS} -o $@ -c $<
 
 all: 			${NAME}
