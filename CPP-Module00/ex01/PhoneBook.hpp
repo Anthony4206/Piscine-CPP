@@ -5,7 +5,8 @@
 
 class PhoneBook {
     private:
-        Contact _contact[8];
+        Contact 	_contact[8];
+		static int	s_size;
     public:
         PhoneBook(void);
         ~PhoneBook(void);
