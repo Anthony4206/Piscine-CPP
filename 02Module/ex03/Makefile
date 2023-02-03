@@ -1,6 +1,6 @@
-NAME 			= HarlFilter
+NAME 			= a.out
 
-SRC				= main.cpp Harl.cpp
+SRC				= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
 OBJ 			= ${SRC:.cpp=.o}
 			

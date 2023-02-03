@@ -27,12 +27,13 @@ int main(int argc, char **argv) {
 	std::string	s2(argv[3]);
     std::string	line;
 	std::size_t	found;
-    while (getline(input_file, line)) {
-		found = line.find(s1);
-        if (found != std::string::npos) {
-			output_file << line.substr(0, found) << s2 << std::endl;
-
-		} else
-			output_file << line << std::endl;
+    while (getline(input_file, line)) {  
+        while ((found = line.find(s1)) != std::string::npos) {
+			output_file << line.substr(0, found) << s2;
+            line = line.substr(found + s1.size(), line.size());
+		}
+	    output_file << line << std::endl;
     }
+    input_file.close();
+    output_file.close();
 }
