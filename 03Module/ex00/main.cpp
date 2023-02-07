@@ -15,5 +15,7 @@ int main(void) {
     clap1.attack(clap2.getName());
     clap1.takeDamage(clap2.getAttackDamage());
     clap1.beRepaired(clap1.getRepairPoints());
+	for (int i = 0; i < 10; i++)
+    	clap2.beRepaired(clap2.getRepairPoints());
     return (0);
 }
