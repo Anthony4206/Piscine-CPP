@@ -48,7 +48,11 @@ void Harl::complain(std::string level) {
     levels[1] = "INFO";
     levels[2] = "WARNING";
     levels[3] = "ERROR";
-    for (int i = 0; i < 4; i++)
-        if (level == levels[i])
+    for (int i = 0; i < 4; i++) {
+        if (level == levels[i]) {
+            std::cout << "[ " << levels[i] << " ]" << std::endl;
             (this->*ptr[i])();
+            std::cout << std::endl;
+        }
+    }
 }

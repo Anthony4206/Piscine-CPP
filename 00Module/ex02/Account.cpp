@@ -102,4 +102,3 @@ void    Account::_displayTimestamp( void ) {
     data = std::localtime(&time);
     std::cout << "[" << std::put_time(data, "%Y%m%d_%H%M%S") << "] ";
 }
-

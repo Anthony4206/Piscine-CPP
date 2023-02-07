@@ -27,6 +27,10 @@ int main(int argc, char **argv) {
 	std::string	s2(argv[3]);
     std::string	line;
 	std::size_t	found;
+    if (s1.empty()) {
+        std::cerr << "s1 cannot be an empty string" << std::endl;
+        return (-1);
+    }
     while (getline(input_file, line)) {  
         while ((found = line.find(s1)) != std::string::npos) {
 			output_file << line.substr(0, found) << s2;
