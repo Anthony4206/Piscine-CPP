@@ -1,14 +1,26 @@
-NAME 			= interface
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/13 11:16:59 by alevasse          #+#    #+#              #
+#    Updated: 2023/02/13 11:19:32 by alevasse         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME			= interface
 
 SRC				= 	main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp
 
-OBJ 			= ${SRC:.cpp=.o}
+OBJ				= ${SRC:.cpp=.o}
 			
-CC 				= c++
+CC				= c++
 
-CFLAGS 			= -Wall -Wextra -Werror -std=c++98
+CFLAGS			= -Wall -Wextra -Werror -std=c++98
 
-RM 				= rm -rf
+RM				= rm -rf
 
 GREEN			:= "\033[0;32m"
 CYAN			:= "\033[0;36m"
@@ -17,7 +29,7 @@ RESET			:= "\033[0m"
 %.o:			%.cpp
 				@${CC} ${CFLAGS} -o $@ -c $<
 
-all: 			${NAME}
+all:			${NAME}
 
 ${NAME}:		${OBJ}
 				@${CC} ${CFLAGS} -o ${NAME} ${OBJ}
@@ -33,4 +45,4 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY: 		all clean fclean re
+.PHONY:			all clean fclean re

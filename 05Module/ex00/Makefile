@@ -6,13 +6,13 @@
 #    By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:03:29 by alevasse          #+#    #+#              #
-#    Updated: 2023/02/13 09:10:31 by alevasse         ###   ########.fr        #
+#    Updated: 2023/02/13 11:52:28 by alevasse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			= animal
+NAME			= bureaucrat
 
-SRC				= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+SRC				= main.cpp Bureaucrat.cpp
 
 OBJ				= ${SRC:.cpp=.o}
 			
