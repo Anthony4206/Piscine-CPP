@@ -7,10 +7,10 @@ class ClapTrap
 {
 private:
     std::string     _name;
-    unsigned int    _hitPoints;
-    unsigned int    _energyPoints;
-    unsigned int    _attackDamage;
-    unsigned int    _repairPoints;
+    int    _hitPoints;
+    int    _energyPoints;
+    int    _attackDamage;
+    int    _repairPoints;
 public:
     ClapTrap(void);
     ClapTrap(std::string name);
@@ -19,10 +19,10 @@ public:
     ClapTrap        &operator=(ClapTrap const &object);
 
     std::string     getName() const;
-    unsigned int    getHitPoints() const;
-    unsigned int    getEnergyPoints() const;
-    unsigned int    getAttackDamage() const;
-    unsigned int    getRepairPoints() const;
+    int    getHitPoints() const;
+    int    getEnergyPoints() const;
+    int    getAttackDamage() const;
+    int    getRepairPoints() const;
 
     void            attack(std::string const &target);
     void            takeDamage(unsigned int amount);

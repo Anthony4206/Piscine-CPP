@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(void) : _name("default"),
 
 ClapTrap::ClapTrap(std::string name) : _name(name),
     _hitPoints(10), _energyPoints(10), _attackDamage(0), _repairPoints(0) {
-    std::cout << "The constructor created ClapTrap object : " << name << std::endl;
+    std::cout << "The constructor created ClapTrap object: " << name << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &object) {
@@ -16,7 +16,8 @@ ClapTrap::ClapTrap(ClapTrap const &object) {
 }
 
 ClapTrap::~ClapTrap(void) {
-    std::cout << "The destructor destroyed ClapTrap object" << std::endl;
+    std::cout << "The destructor destroyed ClapTrap object: "
+        << this->_name << std::endl;
 }
 
 ClapTrap    &ClapTrap::operator=(ClapTrap const &object) {
@@ -31,22 +32,21 @@ std::string ClapTrap::getName() const {
     return (_name);
 }
 
-unsigned int    ClapTrap::getHitPoints() const {
+int    ClapTrap::getHitPoints() const {
     return (_hitPoints);
 }
 
-unsigned int    ClapTrap::getEnergyPoints() const {
+int    ClapTrap::getEnergyPoints() const {
     return (_energyPoints);
 }
 
-unsigned int    ClapTrap::getAttackDamage() const {
+int    ClapTrap::getAttackDamage() const {
     return (_attackDamage);
 }
 
-unsigned int    ClapTrap::getRepairPoints() const {
+int    ClapTrap::getRepairPoints() const {
     return (_repairPoints);
 }
-
 
 void    ClapTrap::attack(std::string const &target) {
     if (this->_hitPoints <= 0) {
