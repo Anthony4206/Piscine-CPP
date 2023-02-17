@@ -60,11 +60,11 @@ Fixed   Fixed::operator-(Fixed const &object) {
 }
 
 Fixed   Fixed::operator*(Fixed const &object) {
-    return (Fixed((float)this->_raw_bits / (1 << s_bits) * (float)object._raw_bits / (1 << s_bits)));
+    return (Fixed(this->_raw_bits / (1 << s_bits) * object._raw_bits / (1 << s_bits)));
 }
 
 Fixed   Fixed::operator/(Fixed const &object) {
-    return (Fixed((float)this->_raw_bits * (1 << s_bits) / (float)object._raw_bits * (1 << s_bits)));
+    return (Fixed(this->_raw_bits * (1 << s_bits) / object._raw_bits * (1 << s_bits)));
 }
 
 Fixed   &Fixed::operator++(void) {

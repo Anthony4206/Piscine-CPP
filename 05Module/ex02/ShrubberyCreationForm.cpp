@@ -1,4 +1,7 @@
+#include <fstream>
+
 #include "ShrubberyCreationForm.hpp"
+#include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
 	: Form(std::string("Shrubbery"), target, 145, 137) {
@@ -23,5 +26,22 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
+	if (this->getSign() && (executor.getGrade() > getExecGrade()))
+		throw ExecutionConditionInvalid();
+	std::ofstream output_file(getTarget() + "_shrubbery");
 
+	if (!output_file.is_open()) {
+		std::cerr << "open outfile failed" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+
+	output_file << "       /\\       " << std::endl;
+	output_file << "      /  \\      " << std::endl;
+	output_file << "     /    \\     " << std::endl;
+	output_file << "    /      \\    " << std::endl;
+	output_file << "   /        \\   " << std::endl;
+	output_file << "  /          \\  " << std::endl;
+	output_file << " /            \\ " << std::endl;
+	output_file << "/______  ______\\" << std::endl;
+	output_file << "       ||        " << std::endl;
 }

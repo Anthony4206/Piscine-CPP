@@ -6,7 +6,7 @@
 /*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:17:03 by alevasse          #+#    #+#             */
-/*   Updated: 2023/02/13 11:19:14 by alevasse         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:14:20 by alevasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ MateriaSource	&MateriaSource::operator=(MateriaSource const &object) {
 			} else {
 				this->_materia[i] = nullptr;           
 			}
-		}       
+		}
 	}
 	return (*this);
 }

@@ -75,6 +75,10 @@ const char	*Form::FormAlreadySign::what() const throw() {
 	return ("error: form is already sign");
 }
 
+const char	*Form::ExecutionConditionInvalid::what() const throw() {
+	return ("error: the execution conditions are invalid");
+}
+
 std::ostream	&operator<<(std::ostream &o, Form const &rhs) {
 	o << "Form " << rhs.getName() << " requiring grade " << rhs.getSignGrade()
 		<< " to sign and grade " << rhs.getExecGrade() << " to execute is"

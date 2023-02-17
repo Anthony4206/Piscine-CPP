@@ -6,13 +6,14 @@ int	main(void) {
 	try {
 		std::cout << "TEST 1 :" << std::endl;
 
-		Bureaucrat					bureaucrat1("Robin", 140);
+		Bureaucrat					bureaucrat1("Robin", 130);
 		ShrubberyCreationForm		form1(bureaucrat1.getName());
-
 
 		std::cout << bureaucrat1 << std::endl;
 		std::cout << form1 << std::endl;
 		bureaucrat1.signForm(form1);
+		std::cout << form1 << std::endl;
+		form1.execute(bureaucrat1);
 
 		Bureaucrat					bureaucrat2;
 		ShrubberyCreationForm		form2(bureaucrat1.getName());
@@ -24,20 +25,20 @@ int	main(void) {
 		std::cerr << e.what() << std::endl;
 	}
 
-/*	try {
+	try {
 		std::cout << std::endl << "TEST 2 :" << std::endl;
 
-		Bureaucrat	bureaucrat2("Yoshi", 150);
-		Form		form2("number two", 100, 50);
+		Bureaucrat				bureaucrat2("Yoshi", 120);
+		ShrubberyCreationForm	form2(bureaucrat2.getName());
 
 		std::cout << bureaucrat2 << std::endl;
 		std::cout << form2 << std::endl;
-		bureaucrat2.signForm(form2);
+		form2.execute(bureaucrat2);
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
-	try {
+/*	try {
 		std::cout << std::endl << "TEST 3 :" << std::endl;
 
 		Bureaucrat	bureaucrat3("Gandalf", 50);
