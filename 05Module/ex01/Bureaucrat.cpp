@@ -30,7 +30,7 @@ Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &rhs) {
 	return (*this);
 }
 
-std::string const	Bureaucrat::getName(void) const {
+std::string	Bureaucrat::getName(void) const {
 	return (_name);
 }
 
@@ -48,6 +48,16 @@ void	Bureaucrat::downGrade(unsigned int value) {
 	if (_grade + value > 150)
 		throw Bureaucrat::GradeTooLowException();
 	_grade += value;
+}
+
+void	Bureaucrat::signForm(Form &rhs) const {
+	rhs.beSigned(*this);
+	if (rhs.getSign()) {
+		std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
+	} else {
+		std::cout << this->getName() << " couldn't sign " << rhs.getName()
+			<< " because his grade is too low" << std::endl;
+	}
 }
 
 const char	*Bureaucrat::GradeTooHighException::what() const throw() {

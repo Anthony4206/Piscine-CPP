@@ -4,6 +4,8 @@
 # include <string>
 # include <exception>
 
+# include "Form.hpp"
+
 class	Bureaucrat {
 	private:
 		std::string const	_name;
@@ -16,10 +18,12 @@ class	Bureaucrat {
 		
 		Bureaucrat	&operator=(Bureaucrat const &rhs);
 
-		std::string const	getName(void) const;
-		int					getGrade(void) const;
-		void				upGrade(unsigned int value);
-		void				downGrade(unsigned int value);
+		std::string	getName(void) const;
+		int			getGrade(void) const;
+		void		upGrade(unsigned int value);
+		void		downGrade(unsigned int value);
+
+		void		signForm(Form &rhs) const;
 
 		class GradeTooHighException : public std::exception {
 			public:
