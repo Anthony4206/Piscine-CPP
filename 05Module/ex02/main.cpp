@@ -1,5 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:20:22 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:20:39 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
@@ -20,7 +32,7 @@ int	main(void) {
 		form1.execute(bureaucrat1);
 
 		Bureaucrat					bureaucrat2;
-		ShrubberyCreationForm		form2(bureaucrat1.getName());
+		ShrubberyCreationForm		form2(bureaucrat2.getName());
 
 		std::cout << bureaucrat2 << std::endl;
 		std::cout << form2 << std::endl;

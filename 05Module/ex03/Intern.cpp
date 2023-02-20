@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:22:10 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:22:35 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -21,8 +33,8 @@ Intern	&Intern::operator=(Intern const &rhs) {
 	return (*this);
 }
 
-Form	*Intern::makeForm(std::string const &nameForm, std::string const &target) {
-	Form *form = nullptr;
+AForm	*Intern::makeForm(std::string const &nameForm, std::string const &target) {
+	AForm *form = nullptr;
 	std::string const formName[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	try {

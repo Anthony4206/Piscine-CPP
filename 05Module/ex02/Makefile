@@ -6,13 +6,13 @@
 #    By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 09:03:29 by alevasse          #+#    #+#              #
-#    Updated: 2023/02/13 11:52:28 by alevasse         ###   ########.fr        #
+#    Updated: 2023/02/20 16:21:43 by alevasse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= bureaucrat
 
-SRC				= 	main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+SRC				= 	main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
 					PresidentialPardonForm.cpp
 
 OBJ				= ${SRC:.cpp=.o}

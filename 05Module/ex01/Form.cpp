@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 15:59:19 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 15:59:21 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
@@ -15,7 +27,8 @@ Form::Form(std::string name, unsigned int signGrade, unsigned int execGrade)
 	std::cout << "The constructor created a Form" << std::endl;
 }
 
-Form::Form(Form const &rhs) : _name(rhs.getName()) {
+Form::Form(Form const &rhs)
+	: _name(rhs.getName()), _signGrade(rhs.getSignGrade()), _execGrade(rhs.getExecGrade()) {
 	std::cout << "The copy constructor created a Form" << std::endl;
 	*this = rhs;
 }
@@ -27,8 +40,6 @@ Form::~Form(void) {
 Form	&Form::operator=(Form const &rhs) {
 	if (this != &rhs) {
 		_sign = rhs.getSign();
-		_signGrade = rhs.getSignGrade();
-		_execGrade = rhs.getExecGrade();
 	}
 	return (*this);
 }

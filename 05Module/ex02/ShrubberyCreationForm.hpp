@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:21:31 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:21:32 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 # include <iostream>
 # include <string>
 # include <exception>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class	Bureaucrat;
 
-class	ShrubberyCreationForm : public Form {
+class	ShrubberyCreationForm : public AForm {
 	private:
 		ShrubberyCreationForm(void);
 	public:

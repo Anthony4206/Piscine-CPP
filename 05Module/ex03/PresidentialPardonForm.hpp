@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:23:00 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:23:02 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 # include <iostream>
 # include <string>
 # include <exception>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class	Bureaucrat;
 
-class	PresidentialPardonForm : public Form {
+class	PresidentialPardonForm : public AForm {
 	private:
 		PresidentialPardonForm(void);
 	public:

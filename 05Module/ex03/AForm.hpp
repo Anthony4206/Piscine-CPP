@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 15:59:25 by alevasse          #+#    #+#             */
-/*   Updated: 2023/02/20 15:59:26 by alevasse         ###   ########.fr       */
+/*   Created: 2023/02/20 16:21:59 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:22:38 by alevasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,28 @@
 
 class	Bureaucrat;
 
-class Form {
+class AForm {
 	private:
 		std::string const	_name;
+		std::string const	_target;
 		bool				_sign;
 		int	const			_signGrade;
 		int	const			_execGrade;
 	public:
-		Form(void);
-		Form(std::string name, unsigned int signGrade, unsigned int execGrade);
-		Form(Form const &rhs);
-		~Form(void);
+		AForm(void);
+		AForm(std::string const &name, std::string const &target, unsigned int signGrade, unsigned int execGrade);
+		AForm(AForm const &rhs);
+		virtual ~AForm(void);
 
-		Form	&operator=(Form const &rhs);
+		AForm	&operator=(AForm const &rhs);
 
 		std::string const	getName() const;
+		std::string const	getTarget() const;
 		bool				getSign() const;
 		int					getSignGrade() const;
 		int					getExecGrade() const;
+
+		virtual void		execute(Bureaucrat const &executor) const = 0;
 
 		void				beSigned(Bureaucrat const &rhs);
 
@@ -53,6 +57,11 @@ class Form {
 			public:
 				const char	*what() const throw();
 		};
+
+		class ExecutionConditionInvalid : public std::exception {
+			public:
+				const char	*what() const throw();
+		};
 };
 
-std::ostream	&operator<<(std::ostream &o, Form const &rhs);
+std::ostream	&operator<<(std::ostream &o, AForm const &rhs);

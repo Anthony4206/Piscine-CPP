@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:21:36 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:21:37 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fstream>
 
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
-	: Form(std::string("Shrubbery"), target, 145, 137) {
+	: AForm(std::string("Shrubbery"), target, 145, 137) {
 	std::cout << "The constructor created a ShrubberyCreationForm" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &rhs)
-	: Form(rhs) {
+	: AForm(rhs) {
 	std::cout << "The copy constructor created a ShrubberyCreationForm" << std::endl;
 	*this = rhs;
 }
@@ -20,7 +32,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void) {
 
 ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
 	if (this != &rhs) {
-		Form::operator=(rhs);
+		AForm::operator=(rhs);
 	}
 	return (*this);
 }

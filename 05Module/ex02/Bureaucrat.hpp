@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:20:17 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:20:43 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 # include <iostream>
 # include <string>
 # include <exception>
 
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class	Bureaucrat {
 	private:
@@ -23,9 +35,9 @@ class	Bureaucrat {
 		void		upGrade(unsigned int value);
 		void		downGrade(unsigned int value);
 
-		void		signForm(Form &rhs) const;
+		void		signForm(AForm &rhs) const;
 
-		void		executeForm(Form const &form) const;
+		void		executeForm(AForm const &form) const;
 
 		class GradeTooHighException : public std::exception {
 			public:

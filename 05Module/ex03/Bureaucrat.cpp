@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevasse <alevasse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/20 16:22:03 by alevasse          #+#    #+#             */
+/*   Updated: 2023/02/20 16:22:37 by alevasse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("default"), _grade(150) {
@@ -50,7 +62,7 @@ void	Bureaucrat::downGrade(unsigned int value) {
 	_grade += value;
 }
 
-void	Bureaucrat::signForm(Form &rhs) const {
+void	Bureaucrat::signForm(AForm &rhs) const {
 	rhs.beSigned(*this);
 	if (rhs.getSign()) {
 		std::cout << this->getName() << " signed " << rhs.getName() << std::endl;
@@ -60,7 +72,7 @@ void	Bureaucrat::signForm(Form &rhs) const {
 	}
 }
 
-void	Bureaucrat::executeForm(Form const &form) const {
+void	Bureaucrat::executeForm(AForm const &form) const {
 	try {
 		form.execute(*this);
 		std::cout << this->getName() << " executed " << form.getName() << std::endl;
