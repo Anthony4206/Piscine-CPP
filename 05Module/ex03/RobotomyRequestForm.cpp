@@ -4,7 +4,7 @@
 #include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm(std::string const &target)
-	: Form(std::string("Robotomy"), target, 72, 45) {
+	: Form(std::string("robotomy request"), target, 72, 45) {
 	std::cout << "The constructor created a RobotomyRequestForm" << std::endl;
 }
 

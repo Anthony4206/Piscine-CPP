@@ -4,7 +4,7 @@
 #include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target)
-	: Form(std::string("Presidential"), target, 25, 5) {
+	: Form(std::string("presidential pardon"), target, 25, 5) {
 	std::cout << "The constructor created a PresidentialPardonForm" << std::endl;
 }
 

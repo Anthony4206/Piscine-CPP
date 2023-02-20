@@ -4,7 +4,7 @@
 #include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const &target)
-	: Form(std::string("Shrubbery"), target, 145, 137) {
+	: Form(std::string("shrubbery creation"), target, 145, 137) {
 	std::cout << "The constructor created a ShrubberyCreationForm" << std::endl;
 }
 
