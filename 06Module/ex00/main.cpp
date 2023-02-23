@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 #include "Scalar.hpp"
 
@@ -8,9 +9,11 @@ int	main(int argc, char **argv) {
 		return (-1);
 	}
 
-	std::string	literal = argv[1];
-
-	Scalar scal(literal);
-
+	try {
+		Scalar scal(argv[1]);
+		std::cout << scal << std::endl;
+	} catch (std::exception const &e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return (0);
 }

@@ -6,7 +6,6 @@ class	Scalar {
 	private:
 		Scalar();
 
-		std::string const	_types[4];
 		std::string			_type;
 		char				_char;
 		int					_int;
@@ -18,6 +17,11 @@ class	Scalar {
 		~Scalar();
 
 		Scalar	&operator=(Scalar const &literal);
+
+		char	getChar() const;
+		int		getInt() const;
+		float	getFloat() const;
+		double	getDouble() const;
 
 		void	determine_literal_type(std::string const &literal);
 
@@ -32,6 +36,16 @@ class	Scalar {
 			public:
 				char const	*what() const throw();
 		};
+
+		class NotDisplayableException : public std::exception {
+			public:
+				char const	*what() const throw();
+		};
+
+		class ImpossibleException : public std::exception {
+			public:
+				char const	*what() const throw();
+		};
 };
 
-std::ostream &operator<<(std::ostream const &o, Scalar const &rhs);
+std::ostream &operator<<(std::ostream &o, Scalar const &rhs);
